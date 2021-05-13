@@ -1,0 +1,19 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "isolatedModules": false,
+    "jsx": "react",
+    "baseUrl": "../",
+    "paths": {
+      "@components/*": ["../components/*"],
+      "@assets/*": ["../assets/*"],
+      "@contexts/*": ["../contexts/*"],
+      "@hooks/*": ["../hooks/*"],
+      "@utils/*": ["../utils/*"],
+      "@styles/*": ["../styles/*"],
+      "@hocs/*": ["../hocs/*"],
+      "@interfaces/*": ["../interfaces/*"]
+    }
+  }
+}
