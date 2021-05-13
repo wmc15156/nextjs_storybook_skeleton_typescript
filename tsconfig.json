@@ -27,6 +27,6 @@
       "@interfaces/*": ["./interfaces/*"]
     }
   },
-  "exclude": ["node_modules", "dist", "electron"],
+  "exclude": ["node_modules", "dist", "electron", "**/*.stories.tsx"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
