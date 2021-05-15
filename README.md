@@ -1,9 +1,9 @@
-# nextjs_storybook_skeleton_typescript
+# nextjs - redux-saga - typescript 기반 boilerplate
 
-- styled-components 기반 storybook 설정
-- nextJs 기반 storybook 설정
+## storybook 사용가능
 
 
 ## 실행방법
 ``` npm i ```
+``` npm run dev```
 ``` npm run storybook ```
