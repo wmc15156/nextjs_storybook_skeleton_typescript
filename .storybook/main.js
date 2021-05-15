@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
   webpackFinal: async config => {
@@ -7,31 +7,31 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         use: [
           {
-            loader: require.resolve("ts-loader")
+            loader: require.resolve('ts-loader'),
           },
           {
-            loader: require.resolve("react-docgen-typescript-loader")
-          }
-        ]
+            loader: require.resolve('react-docgen-typescript-loader'),
+          },
+        ],
       },
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.stories\.tsx?$/,
         loaders: [
           {
-            loader: require.resolve("@storybook/addon-storysource/loader"),
-            options: { parser: "typescript" }
-          }
+            loader: require.resolve('@storybook/addon-storysource/loader'),
+            options: { parser: 'typescript' },
+          },
         ],
-        enforce: "pre"
+        enforce: 'pre',
       },
       {
         test: /\.svg$/,
-        use: ["@svgr/webpack", "url-loader"]
-      }
+        use: ['@svgr/webpack', 'url-loader'],
+      },
       // {
       //   test: /\.(jpe?g|png|svg|gif|ico|webp|jp2)$/,
       //   use: [
@@ -49,40 +49,42 @@ module.exports = {
 
     config.resolve.alias = {
       ...config.resolve.alias,
-      "@components": path.resolve(__dirname, "../components"),
-      "@utils": path.resolve(__dirname, "../utils"),
-      "@styles": path.resolve(__dirname, "../styles"),
-      "@assets": path.resolve(__dirname, "../assets"),
-      "@contexts": path.resolve(__dirname, "../contexts"),
-      "@hooks": path.resolve(__dirname, "../hooks"),
-      "@hocs": path.resolve(__dirname, "../hocs"),
-      "@interfaces": path.resolve(__dirname, "../interfaces")
+      '@components': path.resolve(__dirname, '../components'),
+      '@utils': path.resolve(__dirname, '../utils'),
+      '@styles': path.resolve(__dirname, '../styles'),
+      '@assets': path.resolve(__dirname, '../assets'),
+      '@hooks': path.resolve(__dirname, '../hooks'),
+      '@sagas': path.resolve(__dirname, '../sagas'),
+      '@store': path.resolve(__dirname, '../store'),
+      '@services': path.resolve(__dirname, '../services'),
+      '@reducers': path.resolve(__dirname, '../reducers'),
+      '@config': path.resolve(__dirname, '../config'),
+      '@interfaces': path.resolve(__dirname, '../interfaces'),
     };
 
-    config.resolve.extensions.push(".ts", ".tsx");
-
+    config.resolve.extensions.push('.ts', '.tsx');
     return config;
   },
-  stories: ["../components/**/*.stories.tsx", "../pages/**/*.stories.tsx"],
+  stories: ['../components/**/*.stories.tsx', '../pages/**/*.stories.tsx'],
   addons: [
-    "@storybook/addon-actions/register",
-    "@storybook/addon-links/register",
-    "@storybook/addon-viewport/register",
-    "@storybook/addon-storysource/register",
+    '@storybook/addon-actions/register',
+    '@storybook/addon-links/register',
+    '@storybook/addon-viewport/register',
+    '@storybook/addon-storysource/register',
     {
-      name: "@storybook/preset-typescript",
+      name: '@storybook/preset-typescript',
       options: {
         tsLoaderOptions: {
-          configFile: path.resolve(__dirname, "./tsconfig.json")
+          configFile: path.resolve(__dirname, './tsconfig.json'),
         },
         tsDocgenLoaderOptions: {
-          tsconfigPath: path.resolve(__dirname, "./tsconfig.json")
+          tsconfigPath: path.resolve(__dirname, './tsconfig.json'),
         },
         forkTsCheckerWebpackPluginOptions: {
-          colors: false // disables built-in colors in logger messages
+          colors: false, // disables built-in colors in logger messages
         },
-        include: [path.resolve(__dirname, "../")]
-      }
-    }
-  ]
+        include: [path.resolve(__dirname, '../')],
+      },
+    },
+  ],
 };

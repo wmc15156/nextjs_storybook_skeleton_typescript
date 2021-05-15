@@ -1,59 +1,41 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,
-    "sourceMap": true,
-    "lib": [
-      "ES2020",
-      "DOM"
-    ],
-    "jsx": "preserve",
-    "isolatedModules": true,
-    "module": "esnext", // 최신모듈
-    "moduleResolution": "Node",
     "target": "es5",
-    "strict": true,
-    "resolveJsonModule": true,
-    "baseUrl": "./",
-    "paths": {
-      "@components/*": [
-        "./components/*"
-      ],
-      "@assets/*": [
-        "./assets/*"
-      ],
-      "@contexts/*": [
-        "./contexts/*"
-      ],
-      "@hooks/*": [
-        "./hooks/*"
-      ],
-      "@utils/*": [
-        "./utils/*"
-      ],
-      "@styles/*": [
-        "./styles/*"
-      ],
-      "@public/*": [
-        "./public/*"
-      ],
-      "@interfaces/*": [
-        "./interfaces/*"
-      ]
-    },
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true
+    "noEmit": false,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "sourceMap": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin"
+      }
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["./components/*"],
+      "@assets/*": ["./assets/*"],
+      "@sagas/*": ["./sagas/*"],
+      "@store/*": ["./store/*"],
+      "@services/*": ["./services/*"],
+      "@reducers/*": ["./reducers/*"],
+      "@config/*": ["./config/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@utils/*": ["./utils/*"],
+      "@styles/*": ["./styles/*"],
+      "@public/*": ["./public/*"],
+      "@interfaces/*": ["./interfaces/*"],
+      "@types/*": ["./types/*"]
+    }
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "electron",
-    "**/*.stories.tsx"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "exclude": ["node_modules", "dist", "electron", "**/*.stories.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
