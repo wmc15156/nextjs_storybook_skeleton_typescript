@@ -6,4 +6,5 @@ export default {
   component: Button
 };
 
+// @ts-ignore
 export const Default = () => <Button>aaaaa</Button>;

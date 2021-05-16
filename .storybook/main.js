@@ -71,6 +71,7 @@ module.exports = {
     '@storybook/addon-links/register',
     '@storybook/addon-viewport/register',
     '@storybook/addon-storysource/register',
+    "@storybook/addon-viewport/register",
     {
       name: '@storybook/preset-typescript',
       options: {

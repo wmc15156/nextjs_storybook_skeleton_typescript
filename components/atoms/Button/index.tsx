@@ -8,9 +8,9 @@ const BasicButton = styled.button`
   font-weight: bold;
 `;
 
-// export type ButtonProps = JSX.IntrinsicElements["button"] & {
-//   // onClick?: (e: any) => void;
-// };
+export type ButtonProps = JSX.IntrinsicElements["button"] & {
+  // onClick?: (e: any) => void;
+};
 
 const Button: FC = ({ children, ...props }) => {
   return <BasicButton>{children}</BasicButton>;
